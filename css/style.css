@@ -1,18 +1,38 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: white;
     color: #333;
 }
 
 header {
-    background-color: #ffff99; /* yellowish */
-    color: #333;
+    background: linear-gradient(135deg, #ff0000 0%, #ffff99 100%);
+    color: white;
     margin-bottom: 2rem;
 }
 
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card {
+    margin-bottom: 1rem;
+    border: 2px solid #ff0000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.card-body {
+    padding: 2rem;
+}
+
 .btn-primary {
-    background-color: #ff0000; /* red */
+    background-color: #ff0000;
     border-color: #ff0000;
+    transition: background-color 0.3s ease;
 }
 
 .btn-primary:hover {
@@ -21,12 +41,17 @@ header {
 }
 
 footer {
-    background-color: #ffff99; /* yellowish */
+    background-color: #ffff99;
     color: #333;
     margin-top: 2rem;
 }
 
-.card {
+article img {
+    max-width: 100%;
+    height: auto;
     margin-bottom: 1rem;
-    border: 1px solid #ff0000; /* red border */
+}
+
+.text-muted {
+    font-style: italic;
 }
