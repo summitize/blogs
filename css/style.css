@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: #333;
+}
+
+header {
+    background-color: #ffff99; /* yellowish */
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.btn-primary {
+    background-color: #ff0000; /* red */
+    border-color: #ff0000;
+}
+
+.btn-primary:hover {
+    background-color: #cc0000;
+    border-color: #cc0000;
+}
+
+footer {
+    background-color: #ffff99; /* yellowish */
+    color: #333;
+    margin-top: 2rem;
+}
+
+.card {
+    margin-bottom: 1rem;
+    border: 1px solid #ff0000; /* red border */
+}
