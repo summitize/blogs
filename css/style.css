@@ -584,4 +584,62 @@ h3 {
     .nav-links {
         justify-content: center;
     }
+
+    .article-visual{
+background:#f7f7fb;
+padding:25px;
+border-radius:10px;
+margin-bottom:30px;
+text-align:center;
+}
+
+.visual-subtitle{
+color:#666;
+margin-top:10px;
+}
+
+.timeline{
+margin-top:20px;
+}
+
+.timeline-item{
+display:flex;
+gap:15px;
+margin-bottom:20px;
+}
+
+.timeline-icon{
+font-size:22px;
+}
+
+.timeline-content{
+background:#fafafa;
+padding:12px 15px;
+border-radius:8px;
+}
+
+.chat-container{
+margin-top:20px;
+}
+
+.chat-message{
+display:flex;
+margin-bottom:12px;
+}
+
+.chat-message.user{
+justify-content:flex-end;
+}
+
+.chat-bubble{
+background:#e9eef6;
+padding:12px 14px;
+border-radius:10px;
+max-width:70%;
+}
+
+.chat-bubble.ai{
+background:#f3f3f3;
+}
+
 }
