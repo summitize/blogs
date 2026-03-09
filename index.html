@@ -3,15 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Summitize Journal shares practical AI playbooks for work, hiring, and personal productivity.">
     <title>Summitize Journal | Practical AI Notes for Builders</title>
+    <meta name="description" content="Summitize Journal publishes practical AI playbooks for careers, hiring, and productivity.">
+    <meta name="keywords" content="AI blog, ChatGPT workflows, interview prep, resume writing, productivity systems">
+    <meta name="author" content="Summitize Editorial">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#ff5a2f">
+    <link rel="canonical" href="https://summitize.in/">
+
+    <meta property="og:site_name" content="Summitize Journal">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Summitize Journal | Practical AI Notes for Builders">
+    <meta property="og:description" content="Practical AI playbooks you can apply this week for interviews, resumes, and decision systems.">
+    <meta property="og:url" content="https://summitize.in/">
+    <meta property="og:image" content="https://summitize.in/social-preview.svg">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Summitize Journal | Practical AI Notes for Builders">
+    <meta name="twitter:description" content="Practical AI playbooks you can apply this week for interviews, resumes, and decision systems.">
+    <meta name="twitter:image" content="https://summitize.in/social-preview.svg">
+
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="manifest" href="site.webmanifest">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Summitize Journal",
+        "url": "https://summitize.in/",
+        "description": "Practical AI playbooks for careers, hiring, and productivity."
+    }
+    </script>
     <script defer src="js/script.js"></script>
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
     <header class="topbar">
         <div class="container nav-wrap">
             <a class="brand" href="index.html">Summitize Journal</a>
@@ -24,7 +56,7 @@
         </div>
     </header>
 
-    <main>
+    <main id="main-content">
         <section class="hero fade-in">
             <div class="container">
                 <div class="hero-grid">
@@ -55,9 +87,9 @@
             </div>
             <div class="post-grid">
                 <article class="post-card">
-                    <span class="post-tag">Mindset + Method</span>
-                    <h3>GPT Astro During the T20 World Cup</h3>
-                    <p>A live experiment in real-time AI interpretation using toss decisions, score updates, and momentum shifts.</p>
+                    <span class="post-tag">Detailed Case Study</span>
+                    <h3>GPT Astro During the T20 World Cup: Real-Time Analysis Experiment</h3>
+                    <p>A tournament-long case study using structured live prompts, phase-based momentum analysis, and semifinal/final stress-test insights.</p>
                     <a class="post-link" href="blog1.html">Read article</a>
                 </article>
                 <article class="post-card">
@@ -96,6 +128,64 @@
                     <p>Start with our interview playbook and adopt one system at a time.</p>
                 </div>
                 <a class="btn btn-accent" href="blog2.html">Start Reading</a>
+            </div>
+        </section>
+
+        <section class="container feedback-wrap fade-in delay-3" id="feedback" aria-labelledby="feedback-title">
+            <div class="feedback-shell">
+                <div class="feedback-grid">
+                    <div class="feedback-copy">
+                        <span class="eyebrow">Feedback</span>
+                        <h2 id="feedback-title">Help Us Improve Every Article</h2>
+                        <p>Share what worked, what felt unclear, and which topics you want next.</p>
+                        <ul class="feedback-points">
+                            <li>Tell us which sections were most useful.</li>
+                            <li>Request deeper templates or examples.</li>
+                            <li>Suggest topics for upcoming AI playbooks.</li>
+                        </ul>
+                    </div>
+                    <form class="feedback-form" data-feedback-form>
+                        <input class="visually-hidden" type="text" name="company" tabindex="-1" autocomplete="off">
+                        <input type="hidden" name="page" value="index">
+                        <div class="form-grid">
+                            <div class="form-field">
+                                <label for="home-name">Name</label>
+                                <input id="home-name" name="name" type="text" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="home-email">Email</label>
+                                <input id="home-email" name="email" type="email" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="home-topic">Topic</label>
+                                <select id="home-topic" name="topic" required>
+                                    <option value="">Select one</option>
+                                    <option>GPT Astro Lab</option>
+                                    <option>Interview Buddy</option>
+                                    <option>Resume Builder</option>
+                                    <option>Overall Site Experience</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label for="home-rating">Rating</label>
+                                <select id="home-rating" name="rating" required>
+                                    <option value="">Select one</option>
+                                    <option>Excellent</option>
+                                    <option>Good</option>
+                                    <option>Average</option>
+                                    <option>Needs Work</option>
+                                </select>
+                            </div>
+                            <div class="form-field full">
+                                <label for="home-message">Feedback</label>
+                                <textarea id="home-message" name="message" required placeholder="Share your suggestions..."></textarea>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" type="submit">Submit Feedback</button>
+                        <p class="feedback-note">Responses are captured in your browser for demo purposes and can be connected to a backend endpoint.</p>
+                        <p class="feedback-status" data-feedback-status aria-live="polite"></p>
+                    </form>
+                </div>
             </div>
         </section>
     </main>
