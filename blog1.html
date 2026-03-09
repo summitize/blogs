@@ -3,232 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChatGPT - An Astrology Champ | Summitize.in</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <meta name="description" content="A live T20 World Cup experiment using GPT Astro for pattern-based, real-time AI match analysis.">
+    <title>GPT Astro in the T20 World Cup | Summitize Journal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <script defer src="js/script.js"></script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffff99;">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">Summitize.in</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="blog1.html">Astrology Champ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="blog2.html">Interview Buddy</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="blog3.html">Resume Builder</a>
-                    </li>
-                </ul>
-            </div>
+    <div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
+
+    <header class="topbar">
+        <div class="container nav-wrap">
+            <a class="brand" href="index.html">Summitize Journal</a>
+            <nav class="nav-links" aria-label="Primary navigation">
+                <a href="index.html">Home</a>
+                <a class="active" href="blog1.html">GPT Astro Lab</a>
+                <a href="blog2.html">Interview Buddy</a>
+                <a href="blog3.html">Resume Builder</a>
+            </nav>
         </div>
-    </nav>
-    <header class="bg-primary text-white text-center py-4">
-        <h1><i class="bi bi-stars me-2"></i>ChatGPT - An Astrology Champ</h1>
     </header>
-    <main class="container my-5">
-        <article class="article-content" data-article>
 
-<p>
-During the recent T20 World Cup, I ran a small but fascinating experiment with AI. 
-Instead of using ChatGPT as a simple information tool, I used <strong>GPT Astro</strong>, 
-a version of ChatGPT that interprets events through Vedic astrological principles, 
-to track the entire tournament.
-</p>
+    <main>
+        <section class="article-hero fade-in">
+            <div class="container">
+                <span class="eyebrow">Live Experiment</span>
+                <h1>GPT Astro During the T20 World Cup: Real-Time Pattern Analysis</h1>
+                <p>
+                    During the T20 World Cup, I tested GPT Astro as a live analysis partner rather than a one-shot predictor.
+                    I kept feeding toss updates, score swings, and pressure moments to see how its interpretation evolved.
+                </p>
+                <div class="article-meta">
+                    <span>Published March 9, 2026</span>
+                    <span>10 min read</span>
+                    <span>Author: Summitize Editorial</span>
+                </div>
+            </div>
+        </section>
 
-<p>
-Rather than asking for a one-time prediction such as “Who will win the World Cup?”, 
-I treated the AI like a live analyst. I continuously interacted with it during matches,
-providing match context, toss decisions, and real-time score updates to see how the
-analysis evolved as the game unfolded.
-</p>
+        <section class="container article-layout fade-in delay-1">
+            <article class="article-content" data-article>
+                <p>
+                    This experiment was not about proving astrology right or wrong.
+                    The goal was to see what happens when AI is used as an interactive analyst during a live sporting event.
+                    Instead of asking, "Who will win?" once, I asked for continuous interpretation as the match context changed.
+                </p>
 
-<div class="article-callout">
-This experiment wasn't about fortune telling — it was about observing how AI can interpret
-patterns and momentum when fed structured, real-time inputs.
-</div>
+                <div class="article-callout">
+                    The value came from the evolving conversation, not from a single prediction.
+                </div>
 
-<h2>The Setup: Treating AI as a Live Analyst</h2>
+                <h2>The Setup: AI as a Live Analyst</h2>
+                <p>
+                    I started with broad prompts and then switched to frequent in-game updates once tournament matches began.
+                    This made the interaction dynamic and closer to a commentary engine than a fortune-telling tool.
+                </p>
 
-<p>
-The interaction began with broad prompts asking questions like:
-</p>
+                <h3>Inputs shared during live play</h3>
+                <ul>
+                    <li>Match start time and toss decision</li>
+                    <li>Powerplay score and wickets</li>
+                    <li>Middle-overs momentum shifts</li>
+                    <li>Required run-rate pressure during chases</li>
+                </ul>
 
-<ul>
-<li>Which teams had the strongest astrological alignment to win the tournament?</li>
-<li>Which teams were most likely to reach the semifinals?</li>
-<li>What planetary patterns might influence knockout matches?</li>
-</ul>
+                <h3>Sample prompts</h3>
+                <pre><code>67/1 after 6 overs. How does the outlook change now?
+170/4 in the chase. Is momentum shifting?
+NZ 52/3 after the powerplay while chasing 255. What phase pattern do you see?</code></pre>
 
-<p>
-Once the tournament started, the experiment became far more interactive.
-Instead of static questions, I began sharing <strong>live match situations</strong>.
-</p>
+                <h2>How the Model Framed Match Flow</h2>
+                <p>
+                    GPT Astro repeatedly described phases instead of final outcomes. The analysis emphasized volatility,
+                    control windows, and pressure points that could trigger collapses.
+                </p>
 
-<ul>
-<li>Match start times</li>
-<li>Toss decisions</li>
-<li>Score updates during the innings</li>
-<li>Momentum changes during key overs</li>
-</ul>
+                <ul>
+                    <li><strong>Powerplay volatility:</strong> early overs often looked unstable.</li>
+                    <li><strong>Middle-overs control:</strong> overs 7-15 frequently determined the game arc.</li>
+                    <li><strong>High-total pressure:</strong> once scores crossed 220+, chasing sides tended to over-accelerate.</li>
+                </ul>
 
-<p>
-Typical prompts looked like this:
-</p>
+                <blockquote>
+                    If the batting side crosses 200, the chase may start fast but lose wickets in the middle overs under pressure.
+                </blockquote>
 
-<pre><code>
-67/1 after 6 overs. How does the astrology look now?
-170/4 in the chase. Does momentum shift?
-NZ 52/3 after powerplay chasing 255.
-</code></pre>
+                <h2>Semifinal Stress Test: India vs England</h2>
+                <p>
+                    In the semifinal, I posted score updates continuously while the chase unfolded.
+                    GPT Astro highlighted overs 14-16 as a pressure corridor where wickets were likely.
+                    The game eventually tilted in that phase, aligning with the projected pattern.
+                </p>
 
-<p>
-Instead of simply predicting winners, GPT Astro interpreted phases of the match
-using concepts such as:
-</p>
+                <h2>Final Case: India vs New Zealand</h2>
+                <p>
+                    Before the final, the model gave India a slight edge but warned that toss conditions could matter.
+                    New Zealand chose to field, and India exploded early with a high-tempo start.
+                </p>
 
-<ul>
-<li><strong>Mars energy</strong> representing aggression and explosive scoring</li>
-<li><strong>Moon instability</strong> affecting early match volatility</li>
-<li><strong>Sun authority</strong> representing championship momentum</li>
-</ul>
+                <ul>
+                    <li>India scored 51 in the first four overs.</li>
+                    <li>They crossed 150 before the 12th over.</li>
+                    <li>Final total reached 255 in a title match.</li>
+                </ul>
 
-<h2>How the Predictions Evolved</h2>
+                <p>
+                    During the chase, the required rate kept climbing and forced aggressive shots.
+                    GPT Astro kept flagging this pressure pattern, and New Zealand lost momentum in the powerplay.
+                    India eventually closed out the World Cup win.
+                </p>
 
-<p>
-One of the strongest aspects of the interaction was how predictions changed
-as the match progressed. GPT Astro continuously updated its outlook based on
-the latest information.
-</p>
+                <h2>Why This Format Was Useful</h2>
+                <ul>
+                    <li><strong>Continuous adaptation:</strong> analysis shifted with each live input.</li>
+                    <li><strong>Pattern-driven reasoning:</strong> outputs focused on match phases, not binary calls.</li>
+                    <li><strong>Interactive loop:</strong> each prompt refined the next interpretation.</li>
+                </ul>
 
-<p>
-Certain patterns appeared repeatedly:
-</p>
+                <h2>Final Thoughts</h2>
+                <p>
+                    This was a practical test of AI-assisted live analysis.
+                    The strongest insights did not come from the final prediction; they came from watching interpretation evolve in real time.
+                </p>
 
-<ul>
-<li><strong>Powerplay volatility</strong> — early overs were often unstable.</li>
-<li><strong>Middle overs control</strong> — overs 7–15 usually decided momentum.</li>
-<li><strong>High total pressure</strong> — when teams crossed 220+, chasing sides often collapsed under pressure.</li>
-</ul>
+                <nav class="article-nav" aria-label="Article navigation">
+                    <a href="index.html">Back to home</a>
+                    <a href="blog2.html">Next: Interview Buddy</a>
+                </nav>
+            </article>
 
-<p>
-Rather than claiming certainty, the AI described <strong>likely match trajectories</strong>.
-</p>
-
-<blockquote>
-If the batting side crosses 200, the chasing team may start aggressively but lose wickets in the middle overs due to pressure.
-</blockquote>
-
-<h2>The Semifinal Test Case</h2>
-
-<p>
-The India vs England semifinal became a real test of the approach.
-</p>
-
-<p>
-As the match unfolded, I shared continuous score updates with GPT Astro.
-India produced a huge total, and England began an aggressive chase.
-For a while, the match looked balanced.
-</p>
-
-<p>
-However, GPT Astro suggested that the <strong>14–16 over window</strong>
-was a pressure phase where wickets were likely.
-Eventually, England lost momentum and fell short, confirming the predicted match pattern.
-</p>
-
-<h2>The Final: India vs New Zealand</h2>
-
-<p>
-Before the final began, GPT Astro suggested India had a slight astrological edge,
-although the toss could influence the match.
-</p>
-
-<p>
-New Zealand won the toss and chose to field.
-Then the game began explosively.
-</p>
-
-<ul>
-<li>India scored 51 runs in the first four overs</li>
-<li>They crossed 150 runs before the twelfth over</li>
-</ul>
-
-<p>
-With each score update, the AI's confidence increased.
-Once India crossed 150 with only one wicket down, GPT Astro projected a massive total.
-</p>
-
-<p>
-India eventually finished with <strong>255 runs</strong> — one of the highest
-totals ever in a T20 World Cup final.
-</p>
-
-<h2>The Chase and the Result</h2>
-
-<p>
-During New Zealand’s chase, the AI predicted that the enormous required run rate
-would force aggressive batting, increasing the probability of wickets.
-</p>
-
-<p>
-That is exactly what happened.
-New Zealand lost multiple wickets in the powerplay while trying to keep up
-with the scoring rate.
-</p>
-
-<p>
-India eventually won the World Cup.
-</p>
-
-<h2>What Made This Experiment Interesting</h2>
-
-<ul>
-<li><strong>Continuous adaptation</strong> – predictions changed with every score update.</li>
-<li><strong>Pattern-based reasoning</strong> – the AI focused on phases of the match.</li>
-<li><strong>Interactive analysis</strong> – each prompt triggered a new interpretation.</li>
-</ul>
-
-<h2>Final Thoughts</h2>
-
-<p>
-The goal of the experiment was never to prove astrology.
-Instead, it was to explore what happens when AI is used as an interactive
-analysis partner during live events.
-</p>
-
-<p>
-With every score update, the conversation became a dynamic interpretation of
-patterns, probabilities, and momentum.
-</p>
-
-<blockquote>
-Sometimes the most interesting insights come not from the final prediction,
-but from the journey of analysis along the way.
-</blockquote>
-
-<nav class="article-nav" aria-label="Article navigation">
-    <a href="index.html">Back to home</a>
-    <a href="blog2.html">Next: Interview Buddy</a>
-</nav>
-
-</article>
+            <aside class="article-aside" aria-label="Quick summary">
+                <h3>Quick Summary</h3>
+                <ul>
+                    <li>Used GPT Astro as a live analyst across the tournament.</li>
+                    <li>Fed toss, score, and momentum data continuously.</li>
+                    <li>Analysis focused on pressure phases and trajectory shifts.</li>
+                    <li>Biggest value came from iterative interpretation, not certainty.</li>
+                </ul>
+            </aside>
+        </section>
     </main>
-    <footer class="bg-dark text-white text-center py-3">
-        <p>Summitize.in &copy; 2026</p>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>Summitize Journal &copy; <span data-year></span>. Practical AI writing for builders.</p>
+        </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/script.js"></script>
 </body>
 </html>

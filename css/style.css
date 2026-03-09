@@ -432,6 +432,16 @@ h3 {
     margin: 0;
 }
 
+.article-content blockquote {
+    margin: 1rem 0;
+    padding: 0.95rem 1rem;
+    border-left: 4px solid var(--brand);
+    border-radius: var(--radius-sm);
+    background: rgba(16, 105, 95, 0.08);
+    color: #2f4b45;
+    font-weight: 600;
+}
+
 .article-callout {
     margin: 1.2rem 0;
     padding: 1rem;
