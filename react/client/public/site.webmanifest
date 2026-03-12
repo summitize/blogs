@@ -1,0 +1,16 @@
+{
+  "name": "Summitize Journal",
+  "short_name": "Summitize",
+  "description": "Practical AI playbooks for builders.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff7ef",
+  "theme_color": "#ff5a2f",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
