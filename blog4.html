@@ -90,24 +90,30 @@
             <article class="article-content" data-article>
                 <div class="article-visual">
                     <h2>Embedded Presentation</h2>
-                    <p class="visual-subtitle">This section embeds <code>presentation/Case Study - Agile Delivery 1.6.pptx</code> using Office Web Viewer.</p>
+                    <p class="visual-subtitle">This section embeds <code>presentation/Case Study - Agile Delivery 1.6.pdf</code> directly in the browser.</p>
                 </div>
 
                 <div class="presentation-embed" role="region" aria-label="Embedded case study presentation">
-                    <iframe
-                        title="Case Study - Agile Delivery 1.6"
-                        src="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fsummitize.in%2Fpresentation%2FCase%20Study%20-%20Agile%20Delivery%201.6.pptx"
-                        loading="lazy"
-                        referrerpolicy="no-referrer"
-                    ></iframe>
+                    <object
+                        data="presentation/Case%20Study%20-%20Agile%20Delivery%201.6.pdf#view=FitH"
+                        type="application/pdf"
+                    >
+                        <div class="presentation-fallback">
+                            <p>The PDF preview is not available in this browser.</p>
+                            <p>
+                                Use this direct file link:
+                                <a href="presentation/Case%20Study%20-%20Agile%20Delivery%201.6.pdf" target="_blank" rel="noopener">Open presentation</a>.
+                            </p>
+                        </div>
+                    </object>
                 </div>
                 <p>
                     If the embed preview does not load, use this direct file link:
-                    <a href="presentation/Case%20Study%20-%20Agile%20Delivery%201.6.pptx" target="_blank" rel="noopener">Open presentation</a>.
+                    <a href="presentation/Case%20Study%20-%20Agile%20Delivery%201.6.pdf" target="_blank" rel="noopener">Open presentation</a>.
                 </p>
 
                 <div class="article-callout">
-                    Office Web Viewer requires the PPTX file to be reachable at a public HTTPS URL after deployment.
+                    PDF embed works directly on the static site with broad browser support.
                 </div>
 
                 <h2>What This Case Study Covers</h2>
@@ -135,9 +141,9 @@
                 <h3>Quick Summary</h3>
                 <ul>
                     <li>Dedicated page for your case-study presentation.</li>
-                    <li>Embed target path is <code>presentation/Case Study - Agile Delivery 1.6.pptx</code>.</li>
+                    <li>Embed target path is <code>presentation/Case Study - Agile Delivery 1.6.pdf</code>.</li>
                     <li>Presentation can be reviewed inline or opened in a new tab.</li>
-                    <li>Inline rendering uses Office Web Viewer for PPTX format.</li>
+                    <li>Inline rendering uses direct PDF embedding.</li>
                 </ul>
             </aside>
         </section>
