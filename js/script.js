@@ -8,6 +8,7 @@
 
     initializeReadingProgress();
     initializeFeedbackForms();
+    initializePdfBookReader();
 })();
 
 function initializeReadingProgress() {
@@ -95,4 +96,183 @@ function setStatus(node, message, type) {
     node.textContent = message;
     node.classList.remove('success', 'error');
     node.classList.add(type);
+}
+
+function initializePdfBookReader() {
+    const root = document.querySelector('[data-pdf-book]');
+
+    if (!root) {
+        return;
+    }
+
+    const source = String(root.getAttribute('data-pdf-src') || '').trim();
+    const canvas = root.querySelector('[data-pdf-canvas]');
+    const prevButton = root.querySelector('[data-pdf-prev]');
+    const nextButton = root.querySelector('[data-pdf-next]');
+    const indicator = root.querySelector('[data-pdf-indicator]');
+    const loadingNode = root.querySelector('[data-pdf-loading]');
+    const errorNode = root.querySelector('[data-pdf-error]');
+    const canvasWrap = root.querySelector('.pdf-canvas-wrap');
+
+    const showError = () => {
+        if (loadingNode) {
+            loadingNode.hidden = true;
+        }
+
+        if (errorNode) {
+            errorNode.hidden = false;
+        }
+
+        if (prevButton) {
+            prevButton.disabled = true;
+        }
+
+        if (nextButton) {
+            nextButton.disabled = true;
+        }
+
+        if (indicator) {
+            indicator.textContent = 'Preview unavailable';
+        }
+    };
+
+    if (!source || !canvas || !prevButton || !nextButton || !indicator || !canvasWrap) {
+        showError();
+        return;
+    }
+
+    const pdfjs = window.pdfjsLib;
+
+    if (!pdfjs) {
+        showError();
+        return;
+    }
+
+    pdfjs.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+    const context = canvas.getContext('2d', { alpha: false });
+    let documentRef = null;
+    let currentPage = 1;
+    let rendering = false;
+    let pendingPage = null;
+
+    const updateNavState = () => {
+        indicator.textContent = `Page ${currentPage} of ${documentRef.numPages}`;
+        prevButton.disabled = currentPage <= 1;
+        nextButton.disabled = currentPage >= documentRef.numPages;
+    };
+
+    const queueRender = (pageNumber) => {
+        if (rendering) {
+            pendingPage = pageNumber;
+            return;
+        }
+
+        renderPage(pageNumber);
+    };
+
+    const renderPage = async (pageNumber) => {
+        if (!documentRef || !context) {
+            return;
+        }
+
+        rendering = true;
+
+        if (loadingNode) {
+            loadingNode.hidden = false;
+            loadingNode.textContent = `Loading page ${pageNumber}...`;
+        }
+
+        try {
+            const page = await documentRef.getPage(pageNumber);
+            const availableWidth = Math.max(320, canvasWrap.clientWidth - 20);
+            const baseViewport = page.getViewport({ scale: 1 });
+            const scale = Math.min(2, availableWidth / baseViewport.width);
+            const viewport = page.getViewport({ scale });
+            const deviceScale = window.devicePixelRatio || 1;
+
+            canvas.width = Math.floor(viewport.width * deviceScale);
+            canvas.height = Math.floor(viewport.height * deviceScale);
+            canvas.style.width = `${Math.floor(viewport.width)}px`;
+            canvas.style.height = `${Math.floor(viewport.height)}px`;
+
+            const transform = deviceScale !== 1 ? [deviceScale, 0, 0, deviceScale, 0, 0] : null;
+
+            await page.render({
+                canvasContext: context,
+                viewport,
+                transform
+            }).promise;
+
+            currentPage = pageNumber;
+            updateNavState();
+
+            if (errorNode) {
+                errorNode.hidden = true;
+            }
+        } catch (error) {
+            showError();
+        } finally {
+            rendering = false;
+
+            if (loadingNode) {
+                loadingNode.hidden = true;
+            }
+
+            if (pendingPage !== null) {
+                const nextPending = pendingPage;
+                pendingPage = null;
+                queueRender(nextPending);
+            }
+        }
+    };
+
+    prevButton.addEventListener('click', () => {
+        if (currentPage <= 1) {
+            return;
+        }
+
+        queueRender(currentPage - 1);
+    });
+
+    nextButton.addEventListener('click', () => {
+        if (!documentRef || currentPage >= documentRef.numPages) {
+            return;
+        }
+
+        queueRender(currentPage + 1);
+    });
+
+    document.addEventListener('keydown', (event) => {
+        const activeElement = document.activeElement;
+        const tagName = activeElement?.tagName || '';
+        const isTyping = tagName === 'INPUT' || tagName === 'TEXTAREA' || activeElement?.isContentEditable;
+
+        if (isTyping) {
+            return;
+        }
+
+        if (event.key === 'ArrowLeft') {
+            event.preventDefault();
+            prevButton.click();
+        } else if (event.key === 'ArrowRight') {
+            event.preventDefault();
+            nextButton.click();
+        }
+    });
+
+    let resizeTimer = null;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => queueRender(currentPage), 120);
+    });
+
+    pdfjs.getDocument({ url: source }).promise
+        .then((pdfDocument) => {
+            documentRef = pdfDocument;
+            queueRender(1);
+        })
+        .catch(() => {
+            showError();
+        });
 }

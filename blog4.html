@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agile Delivery Case Study Deck | Summitize Journal</title>
-    <meta name="description" content="Embedded Agile Delivery case study presentation page with project context, highlights, and direct slide viewing.">
+    <title>Agile Delivery Case Study | Summitize Journal</title>
+    <meta name="description" content="Agile Delivery case study with context, execution model, outcomes, and an embedded presentation PDF.">
     <meta name="keywords" content="case study presentation, project walkthrough, embedded deck, AI case study">
     <meta name="author" content="Summitize Editorial">
     <meta name="robots" content="index, follow, max-image-preview:large">
@@ -13,16 +13,16 @@
 
     <meta property="og:site_name" content="Summitize Journal">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Agile Delivery Case Study Deck">
-    <meta property="og:description" content="Explore the full Agile Delivery case study presentation directly in the page with summary notes and context.">
+    <meta property="og:title" content="Agile Delivery Case Study">
+    <meta property="og:description" content="Explore the Agile Delivery case study with practical implementation notes and full presentation PDF.">
     <meta property="og:url" content="https://summitize.in/blog4.html">
     <meta property="og:image" content="https://summitize.in/social-preview.svg">
     <meta property="article:published_time" content="2026-03-12">
     <meta property="og:locale" content="en_US">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Agile Delivery Case Study Deck">
-    <meta name="twitter:description" content="Embedded case study presentation with summary insights and key results.">
+    <meta name="twitter:title" content="Agile Delivery Case Study">
+    <meta name="twitter:description" content="Practical Agile Delivery case study with challenge, approach, and outcomes.">
     <meta name="twitter:image" content="https://summitize.in/social-preview.svg">
 
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -35,8 +35,8 @@
     {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
-        "headline": "Agile Delivery Case Study Deck",
-        "description": "Presentation-led Agile Delivery case study page with embedded deck and implementation highlights.",
+        "headline": "Agile Delivery Case Study",
+        "description": "Agile Delivery case study page with embedded presentation and implementation highlights.",
         "datePublished": "2026-03-12",
         "dateModified": "2026-03-12",
         "author": {
@@ -50,6 +50,7 @@
         "mainEntityOfPage": "https://summitize.in/blog4.html"
     }
     </script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
     <script defer src="js/script.js"></script>
 </head>
 <body>
@@ -64,7 +65,7 @@
                 <a href="blog1.html">GPT Astro Lab</a>
                 <a href="blog2.html">Interview Buddy</a>
                 <a href="blog3.html">Resume Builder</a>
-                <a class="active" href="blog4.html">Case Study Deck</a>
+                <a class="active" href="blog4.html">Agile Delivery Case Study</a>
             </nav>
         </div>
     </header>
@@ -73,14 +74,14 @@
         <section class="article-hero fade-in">
             <div class="container">
                 <span class="eyebrow">Case Study Presentation</span>
-                <h1>Agile Delivery Case Study Deck</h1>
+                <h1>Agile Delivery Case Study</h1>
                 <p>
-                    This page embeds the full presentation so readers can review the case study without leaving the site.
-                    It also includes context notes and the main outcomes for quick scanning.
+                    This case study captures how Agile Delivery practices were structured to improve execution clarity,
+                    planning reliability, and stakeholder confidence across a multi-team program.
                 </p>
                 <div class="article-meta">
                     <span>Published March 12, 2026</span>
-                    <span>7 min overview + full deck</span>
+                    <span>Context, approach, outcomes + full PDF</span>
                     <span>Author: Summitize Editorial</span>
                 </div>
             </div>
@@ -89,46 +90,100 @@
         <section class="container article-layout fade-in delay-1">
             <article class="article-content" data-article>
                 <div class="article-visual">
-                    <h2>Embedded Presentation</h2>
-                    <p class="visual-subtitle">This section embeds <code>presentation/Case Study - Agile Delivery 1.6.pdf</code> directly in the browser.</p>
+                    <h2>Case Study Presentation</h2>
+                    <p class="visual-subtitle">Read in book mode using horizontal page switching (Previous/Next).</p>
                 </div>
 
-                <div class="presentation-embed" role="region" aria-label="Embedded case study presentation">
-                    <object
-                        data="presentation/Case%20Study%20-%20Agile%20Delivery%201.6.pdf#view=FitH"
-                        type="application/pdf"
-                    >
-                        <div class="presentation-fallback">
-                            <p>The PDF preview is not available in this browser.</p>
-                            <p>
-                                Use this direct file link:
-                                <a href="presentation/Case%20Study%20-%20Agile%20Delivery%201.6.pdf" target="_blank" rel="noopener">Open presentation</a>.
-                            </p>
-                        </div>
-                    </object>
+                <div
+                    class="presentation-embed pdf-book"
+                    data-pdf-book
+                    data-pdf-src="presentation/Case%20Study%20-%20Agile%20Delivery%201.6.pdf"
+                    role="region"
+                    aria-label="Agile delivery case study book reader"
+                >
+                    <div class="pdf-book-toolbar">
+                        <button class="pdf-nav-btn" type="button" data-pdf-prev aria-label="Previous page">Previous</button>
+                        <p class="pdf-page-indicator" data-pdf-indicator>Page 1 of --</p>
+                        <button class="pdf-nav-btn" type="button" data-pdf-next aria-label="Next page">Next</button>
+                    </div>
+                    <div class="pdf-canvas-wrap">
+                        <canvas data-pdf-canvas aria-label="Case study PDF page"></canvas>
+                    </div>
+                    <p class="pdf-help">Tip: use Left/Right arrow keys for horizontal page switching.</p>
+                    <p class="pdf-loading" data-pdf-loading>Loading book view...</p>
+                    <p class="pdf-error" data-pdf-error hidden>
+                        Interactive book mode is unavailable in this browser.
+                        <a href="presentation/Case%20Study%20-%20Agile%20Delivery%201.6.pdf" target="_blank" rel="noopener">Open presentation</a>.
+                    </p>
                 </div>
                 <p>
-                    If the embed preview does not load, use this direct file link:
+                    If book mode does not load, use this direct file link:
                     <a href="presentation/Case%20Study%20-%20Agile%20Delivery%201.6.pdf" target="_blank" rel="noopener">Open presentation</a>.
                 </p>
 
                 <div class="article-callout">
-                    PDF embed works directly on the static site with broad browser support.
+                    Use this case study as an implementation blueprint: define delivery operating rules first, then scale team-level execution.
                 </div>
 
-                <h2>What This Case Study Covers</h2>
+                <h2>Executive Snapshot</h2>
                 <ul>
-                    <li>Business context and the original problem statement.</li>
-                    <li>Execution model, tools, and implementation phases.</li>
-                    <li>Measured outcomes and decision impact.</li>
-                    <li>Lessons learned and next iteration roadmap.</li>
+                    <li><strong>Primary goal:</strong> improve predictability and delivery confidence.</li>
+                    <li><strong>Operating challenge:</strong> fragmented planning and inconsistent handoffs.</li>
+                    <li><strong>Intervention:</strong> standardized Agile ceremonies, flow governance, and review cadence.</li>
+                    <li><strong>Expected outcome:</strong> clearer ownership, faster decisions, and tighter delivery control.</li>
                 </ul>
 
-                <h2>Suggested Reading Flow</h2>
+                <h2>Problem Statement</h2>
+                <p>
+                    The delivery system had uneven planning quality, variable sprint discipline, and delayed issue escalation.
+                    Program leaders needed a structure that connected team activity to business outcomes without adding heavy process overhead.
+                </p>
+
+                <h2>Delivery Model Used</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-icon">P1</div>
+                        <div class="timeline-content">
+                            <strong>Baseline and Alignment</strong>
+                            <p>Created a shared view of backlog health, cycle bottlenecks, and priority conflicts.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon">P2</div>
+                        <div class="timeline-content">
+                            <strong>Cadence Standardization</strong>
+                            <p>Introduced a consistent sprint rhythm, planning quality checks, and cross-team sync points.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon">P3</div>
+                        <div class="timeline-content">
+                            <strong>Execution Controls</strong>
+                            <p>Used daily blockers review, dependency tracking, and escalation SLAs to reduce delivery drift.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon">P4</div>
+                        <div class="timeline-content">
+                            <strong>Outcome Review</strong>
+                            <p>Measured planning quality, throughput stability, and stakeholder confidence at regular checkpoints.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Observed Outcomes</h2>
+                <ul>
+                    <li>Better sprint commitment quality and fewer mid-sprint surprises.</li>
+                    <li>Faster risk surfacing through a clearer escalation path.</li>
+                    <li>Improved visibility of dependencies and ownership boundaries.</li>
+                    <li>Higher confidence in release readiness discussions.</li>
+                </ul>
+
+                <h2>How to Read and Reuse This Case Study</h2>
                 <ol>
-                    <li>Skim the first 2-3 slides for context and target outcome.</li>
-                    <li>Focus on the architecture/process slides for implementation detail.</li>
-                    <li>Review results and limitations before drawing conclusions.</li>
+                    <li>Start with the problem framing and map it to your own delivery pain points.</li>
+                    <li>Extract the operating model choices (cadence, controls, ownership).</li>
+                    <li>Adopt the review checkpoints as a minimum governance pattern.</li>
                 </ol>
 
                 <nav class="article-nav" aria-label="Article navigation">
@@ -140,10 +195,10 @@
             <aside class="article-aside" aria-label="Quick summary">
                 <h3>Quick Summary</h3>
                 <ul>
-                    <li>Dedicated page for your case-study presentation.</li>
+                    <li>Focused Agile Delivery case study with full PDF embedded.</li>
                     <li>Embed target path is <code>presentation/Case Study - Agile Delivery 1.6.pdf</code>.</li>
-                    <li>Presentation can be reviewed inline or opened in a new tab.</li>
-                    <li>Inline rendering uses direct PDF embedding.</li>
+                    <li>Includes problem framing, delivery model, and outcomes.</li>
+                    <li>Can be used as a practical template for similar programs.</li>
                 </ul>
             </aside>
         </section>
@@ -153,12 +208,12 @@
                 <div class="feedback-grid">
                     <div class="feedback-copy">
                         <span class="eyebrow">Feedback</span>
-                        <h2 id="feedback-title">How Useful Is This Deck Format?</h2>
-                        <p>Share whether embedded slides are easier to consume than long-form writeups.</p>
+                        <h2 id="feedback-title">How Useful Is This Agile Delivery Case Study?</h2>
+                        <p>Share whether the case-study framing and execution notes are clear and practical.</p>
                         <ul class="feedback-points">
-                            <li>Deck clarity and readability</li>
-                            <li>Context quality and structure</li>
-                            <li>Usefulness of outcome and lessons sections</li>
+                            <li>Problem framing and context clarity</li>
+                            <li>Execution model and operating details</li>
+                            <li>Usefulness of outcomes and lessons</li>
                         </ul>
                     </div>
                     <form class="feedback-form" data-feedback-form>
@@ -177,9 +232,9 @@
                                 <label for="b4-topic">Topic</label>
                                 <select id="b4-topic" name="topic" required>
                                     <option value="">Select one</option>
-                                    <option>Deck Structure</option>
-                                    <option>Context Clarity</option>
-                                    <option>Insights and Outcomes</option>
+                                    <option>Problem Framing</option>
+                                    <option>Delivery Model</option>
+                                    <option>Outcomes and Insights</option>
                                     <option>Design and Readability</option>
                                 </select>
                             </div>
