@@ -109,6 +109,7 @@ function initializePdfBookReader() {
     const canvas = root.querySelector('[data-pdf-canvas]');
     const prevButton = root.querySelector('[data-pdf-prev]');
     const nextButton = root.querySelector('[data-pdf-next]');
+    const fullscreenButton = root.querySelector('[data-pdf-fullscreen]');
     const indicator = root.querySelector('[data-pdf-indicator]');
     const loadingNode = root.querySelector('[data-pdf-loading]');
     const errorNode = root.querySelector('[data-pdf-error]');
@@ -129,6 +130,10 @@ function initializePdfBookReader() {
 
         if (nextButton) {
             nextButton.disabled = true;
+        }
+
+        if (fullscreenButton) {
+            fullscreenButton.disabled = true;
         }
 
         if (indicator) {
@@ -155,6 +160,17 @@ function initializePdfBookReader() {
     let currentPage = 1;
     let rendering = false;
     let pendingPage = null;
+
+    const updateFullscreenLabel = () => {
+        if (!fullscreenButton) {
+            return;
+        }
+
+        const fullElement = document.fullscreenElement || document.webkitFullscreenElement;
+        const isActive = fullElement === root;
+        fullscreenButton.textContent = isActive ? 'Exit Full Screen' : 'Full Screen';
+        fullscreenButton.setAttribute('aria-label', isActive ? 'Exit full screen' : 'Enter full screen');
+    };
 
     const updateNavState = () => {
         indicator.textContent = `Page ${currentPage} of ${documentRef.numPages}`;
@@ -242,6 +258,65 @@ function initializePdfBookReader() {
 
         queueRender(currentPage + 1);
     });
+
+    const requestFullScreen = () => {
+        if (root.requestFullscreen) {
+            return root.requestFullscreen();
+        }
+
+        if (root.webkitRequestFullscreen) {
+            return root.webkitRequestFullscreen();
+        }
+
+        return Promise.reject(new Error('Fullscreen API not supported'));
+    };
+
+    const exitFullScreen = () => {
+        if (document.exitFullscreen) {
+            return document.exitFullscreen();
+        }
+
+        if (document.webkitExitFullscreen) {
+            return document.webkitExitFullscreen();
+        }
+
+        return Promise.resolve();
+    };
+
+    if (fullscreenButton) {
+        fullscreenButton.addEventListener('click', () => {
+            const fullElement = document.fullscreenElement || document.webkitFullscreenElement;
+            const isActive = fullElement === root;
+
+            if (isActive) {
+                exitFullScreen().finally(() => {
+                    updateFullscreenLabel();
+                    queueRender(currentPage);
+                });
+            } else {
+                requestFullScreen()
+                    .then(() => {
+                        updateFullscreenLabel();
+                        queueRender(currentPage);
+                    })
+                    .catch(() => {
+                        fullscreenButton.disabled = true;
+                    });
+            }
+        });
+
+        document.addEventListener('fullscreenchange', () => {
+            updateFullscreenLabel();
+            queueRender(currentPage);
+        });
+
+        document.addEventListener('webkitfullscreenchange', () => {
+            updateFullscreenLabel();
+            queueRender(currentPage);
+        });
+
+        updateFullscreenLabel();
+    }
 
     document.addEventListener('keydown', (event) => {
         const activeElement = document.activeElement;
